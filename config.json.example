@@ -1,0 +1,62 @@
+{
+  "Name": "Name of this training, string",
+  "Dataset": {
+    "version" : "Any name you want, string",
+    "dataset_type": "pascal, coco, oid or csv, string(pascal only now)",
+    "dataset_path": "dataset path",
+    "fixed_labels": "work for csv, bool",
+    "csv_classes_file": null,
+    "csv_data_file": null,
+    "csv_val_annotations": null,
+    "oid_labels_filter": true,
+    "oid_annotation_cache_dir": null
+  },
+  "Train": {
+    "epochs": 50,
+    "steps": 150,
+    "batch_size": 4,
+    "period": 5,
+    "save_snapshots": "whether to save snapshots, bool",
+    "save_configs": "whether to save this config file, bool",
+    "tensorboard": "whether to save tfevents, bool",
+    "load_snapshot": "Continue training from a snapshot, string",
+    "imagenet_weights": null,
+    "weights": "backbone weights path",
+    "no_weights": false,
+    "backbone": "resnet50",
+    "init_lr": "initial learning rate, float",
+    "reduce_lr": "reduce learning rate during traing, bool",
+    "lr_factor": "mutiplier when reducing lr, float",
+    "lr_multiplier_layer": "a dict specify which layers to implement lr mult, like this: {"pyramid_classification": 0.5}",
+    "min_lr": "stop update learning rate when reach min_lr, ex. 1e-6",
+    "val_monitor": "index according to which learning rate will adjust, string",
+    "gpu": 0,
+    "multi_gpu": 1,
+    "multi_gpu_force": false,
+    "evaluation": true,
+    "freeze_backbone": true,
+    "image_min_side": 800,
+    "image_max_side": 1080,
+    "save_path": null
+  },
+  "Data_Augmentation":{
+    "only_x_flip": true,
+    "transforms": {
+      "inverse_color": false,
+      "gray": false,
+      "shear": [0.0, 0.0],
+      "min_scaling": [1.0, 1.0],
+      "max_scaling": [1.0, 1.0],
+      "rotation": [0.0, 0.0],
+      "min_translation": [0.0, 0.0],
+      "max_translation": [0.0, 0.0]
+    }
+  },
+  "Anchors":{
+    "sizes": [],
+    "ratios": [0.8, 1.2, 1.6],
+    "scales": [0, 0.3333333, 0.6666666]
+  }
+}
+
+
